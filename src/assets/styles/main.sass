@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900')
-@import './colors'
 
 *
   padding: 0
@@ -15,8 +14,6 @@ body
   font-style: normal
   background-color: #F5F5F5
 
-  --root-padding: 15px
-
 a
   color: inherit
   text-decoration: none
@@ -27,12 +24,28 @@ li
 button
   border: none
   cursor: pointer
+  &:hover
+    background-color: rgba(135, 116, 225, 0.08) !important
 
-.MuiSnackbar-root
-  top: 15px !important
+.tag
+  padding: 2px 8px
+  color: #000
+  font-size: 14px
+  line-height: 20px
+  background-color: transparent
+  border-radius: 8px
+  user-select: none
+  cursor: pointer
 
-.nowrap
-  max-width: 200px
-  white-space: nowrap
-  text-overflow: ellipsis
-  overflow: hidden
+.tag
+  text-wrap: nowrap
+  &.active,
+  &:hover
+    background-color: rgba(191, 178, 255, .3)
+
+.h-div
+  display: block
+  height: 20px
+  width: 1px
+  background-color: #000
+  opacity: .2

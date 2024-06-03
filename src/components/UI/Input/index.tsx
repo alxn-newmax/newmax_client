@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
+import UseValidate from '../../../utils/validateInputs';
 
 import { Props } from './Input.types';
 import classes from './Input.module.sass';
@@ -10,6 +12,11 @@ export default function InputField(props: Props) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const eventType = event.target.type;
     let eventValue = event.target.value;
+
+    if (eventType === 'email') {
+      const data = UseValidate(eventType, eventValue);
+      setError(data);
+    }
 
     setValue(eventValue);
   };

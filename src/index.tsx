@@ -1,10 +1,10 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import { store } from './store';
-import { WebAppContextProvider } from './store/webAppContext';
+import { ThemeContextProvider } from './store/themeContext';
+import TanstackProvider from './providers/tanstackProvider';
 
 import './assets/styles/main.sass';
 
@@ -12,8 +12,10 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <Provider store={store}>
-    <WebAppContextProvider>
-      <App />
-    </WebAppContextProvider>
+    <ThemeContextProvider>
+      <TanstackProvider>
+        <App />
+      </TanstackProvider>
+    </ThemeContextProvider>
   </Provider>
 );
